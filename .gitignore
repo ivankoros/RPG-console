@@ -400,3 +400,10 @@ FodyWeavers.xsd
 *.sln.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
+/.idea/.idea.RPG-console/.idea/.gitignore
+/.idea/.idea.RPG-console/.idea/encodings.xml
+/.idea/.idea.RPG-console/.idea/indexLayout.xml
+/.idea/.idea.RPG-console/.idea/misc.xml
+/RPG-console.csproj
+/RPG-console.sln
+/.idea/.idea.RPG-console/.idea/vcs.xml
