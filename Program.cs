@@ -26,18 +26,18 @@ static string NaturalPrint(string line, int newLineDelay = 1000)
                 break;
         }
     }
-    
+
     Console.WriteLine("");
-    
+
     Thread.Sleep(newLineDelay);
 
     return line;
 }
 
-// This is an text-based adventure game. The player will be able to move around the map and interact with objects.
+// Intro
 NaturalPrint("Hello, adventurer!");
 
-Console.WriteLine("What is your name?");
+NaturalPrint("What is your name?");
 
 var regex = new Regex(@"^[a-zA-Z]+$");
 
@@ -52,19 +52,21 @@ while (!validName)
     validName = playerName != null && regex.IsMatch(playerName);
 }
 
-Console.WriteLine($"Ah.. welcome {playerName}!");
-Thread.Sleep(2000);
+NaturalPrint($"Ah.. welcome {playerName}!",
+    2000);
 
-System.Threading.Thread.Sleep(500);
-Console.Write("Our adventure is starting");
+NaturalPrint("Our adventure is starting");
+
 for (int i = 0; i < 10; i++)
 {
     Thread.Sleep(500); // wait for half a second
     Console.Write(".");
 }
+
+NaturalPrint("You're sitting by a campfire; the flames dance fiercely against a light wind.");
+
 Console.WriteLine(@"
 
-You're sitting by a campfire; the flames dance fiercely against a light wind.
         ______
 jgs    /     /\
       /     /  \
@@ -80,10 +82,7 @@ Thread.Sleep(2000);
 var line = "You look around. Surrounded by a forest, neither the surrounding trees nor the log you're" +
            "sitting on seem familiar.";
 
-NaturalPrint(line);
-
-Console.WriteLine("");
-Thread.Sleep(2000);
+NaturalPrint(line, 2000);
 
 line = "Does it matter? The fire is warm, and you feel safe.";
 Console.ForegroundColor = ConsoleColor.Green;
@@ -91,6 +90,7 @@ for (int i = 0; i < line.Length; i++)
 {
     Console.Write(line[i]);
 }
+
 Console.ResetColor();
 Console.WriteLine("");
 
@@ -101,17 +101,20 @@ for (int i = 0; i < line.Length; i++)
     Console.Write(line[i]);
     Thread.Sleep(50);
 }
+
 Thread.Sleep(2000);
 
 Console.WriteLine("Relaxing, you close your eyes and let the warmth of the fire calm you. \n");
 Thread.Sleep(1500);
 Console.WriteLine("You're exhausted, although you don't seem to remember why. \n");
-Thread.Sleep(1000);
-Console.WriteLine("You realize you haven't eaten all day; you're starving." +
-                  " When was the last time you ate? \n");
 
-Thread.Sleep(3000);
-Console.WriteLine("Hunger overcomes curiosity. You open your eyes and see a hiking sack on the ground to your right. \n");
+NaturalPrint("You realize you haven't eaten all day; you're starving." +
+             " When was the last time you ate?",
+    newLineDelay: 3000);
+
+
+NaturalPrint("Hunger overcomes curiosity. You open your eyes and see a hiking sack on the ground to your right.",
+    2000);
 Console.WriteLine(@"
 
        .--._ .
@@ -131,7 +134,7 @@ Console.WriteLine(@"
 
 Thread.Sleep(2200);
 
-Console.WriteLine("What will you do?");
+NaturalPrint("What will you do?");
 var campfireFirstResponse = Console.ReadLine();
 
 if (campfireFirstResponse != null)
@@ -140,7 +143,7 @@ if (campfireFirstResponse != null)
 
     if (campfireFirstResponse!.Contains("look"))
     {
-        Console.WriteLine("You look through the hiking sack.)");
+        Console.WriteLine("You look through the hiking sack.");
         Thread.Sleep(1000);
         for (int i = 0; i < 3; i++)
         {
@@ -157,11 +160,26 @@ if (campfireFirstResponse != null)
     }
 }
 
+
 for (int i = 0; i < 10; i++)
 {
     Thread.Sleep(500); // wait for half a second
     Console.Write(".");
 }
 
+Console.Clear();
 
 
+NaturalPrint("You're sitting by a campfire; the flames dance fiercely against a light wind.");
+Console.WriteLine(@"
+
+
+        ______
+jgs    /     /\
+      /     /  \
+     /_____/----\_    (  
+    ""     ""          ).  
+   _ ___          o (:') o   
+  (@))_))        o ~/~~\~ o   
+                  o  o  o
+");
