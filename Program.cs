@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-static string NaturalPrint(string line)
+static string NaturalPrint(string line, int newLineDelay = 1000)
 {
     for (int i = 0; i < line.Length; i++)
     {
@@ -28,13 +28,15 @@ static string NaturalPrint(string line)
     }
     
     Console.WriteLine("");
+    
+    Thread.Sleep(newLineDelay);
 
     return line;
 }
 
 // This is an text-based adventure game. The player will be able to move around the map and interact with objects.
 NaturalPrint("Hello, adventurer!");
-Thread.Sleep(500);
+
 Console.WriteLine("What is your name?");
 
 var regex = new Regex(@"^[a-zA-Z]+$");
