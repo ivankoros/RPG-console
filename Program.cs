@@ -24,17 +24,15 @@ Console.WriteLine($"Ah.. welcome {playerName}!");
 Thread.Sleep(2000);
 
 System.Threading.Thread.Sleep(500);
-Console.WriteLine("Our adventure will start in...");
-for (int i = 10; i > 0; i--)
+Console.WriteLine("Our adventure is starting...");
+for (int i = 0; i < 10; i++)
 {
-    Console.WriteLine($"{i} seconds");
-    System.Threading.Thread.Sleep(1000);
-    
+    Thread.Sleep(500); // wait for half a second
+    Console.Write(".");
 }
-
-Console.WriteLine("Let's go! :D");
 Console.WriteLine(@"
-You sit by the campfire, the flames dancing in the wind.
+
+You're sitting by a campfire; the flames dance fiercely against a light wind.
         ______
 jgs    /     /\
       /     /  \
@@ -45,6 +43,91 @@ jgs    /     /\
                   o  o  o
 ");
 
+Thread.Sleep(2000);
+
+var line = "You look around. Surrounded by a forest, neither the surrounding trees nor the log you're" +
+           "sitting on seem familiar.";
+
+for (int i = 0; i < line.Length; i++)
+{
+    Console.Write(line[i]);
+    Thread.Sleep(50);
+}
 Console.WriteLine("");
+Thread.Sleep(2000);
+
+line = "Does it matter? The fire is warm, and you feel safe.";
+Console.ForegroundColor = ConsoleColor.Green;
+for (int i = 0; i < 10; i++)
+{
+    Console.Write(line[i]);
+}
+Console.ResetColor();
+Console.WriteLine("");
+ad
+Thread.Sleep(2000);
+Console.WriteLine("'I guess not,' you say out loud. \n");
+Thread.Sleep(2000);
+
+Console.WriteLine("Relaxing, you close your eyes and let the warmth of the fire calm you.");
+Thread.Sleep(1500);
+Console.WriteLine("You're exhausted, although you don't seem to remember why. \n");
+Thread.Sleep(1000);
+Console.WriteLine("You realize you haven't eaten all day; you're starving." +
+                  " When was the last time you ate? \n");
+
+Thread.Sleep(3000);
+Console.WriteLine("Hunger overcomes curiosity. You open your eyes and see a hiking sack on the ground to your right. \n");
+Console.WriteLine(@"
+
+       .--._ .
+        \ ).'
+         )|/
+      _.'''-._
+     (        \
+      \        )
+      )'-.    (
+  '  /     _.-'\
+  ''/           )'''
+'''('-._       /''';';'
+ '''\        _/ ''""''       
+''""''-.__=='' ''""''''
+''""'''""'''""'''""""'''
+");
+
+Thread.Sleep(2200);
+
+Console.WriteLine("What will you do?");
+var campfireFirstResponse = Console.ReadLine();
+
+if (campfireFirstResponse != null)
+{
+    campfireFirstResponse = Regex.Replace(campfireFirstResponse, @"[^\w]", "");
+
+    if (campfireFirstResponse!.Contains("look"))
+    {
+        Console.WriteLine("You look through the hiking sack.)");
+        Thread.Sleep(1000);
+        for (int i = 0; i < 3; i++)
+        {
+            Thread.Sleep(600);
+            Console.Write(".");
+        }
+
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("You should've gone to sleep.");
+        Console.ResetColor();
+
+        Console.WriteLine();
+    }
+}
+
+for (int i = 0; i < 10; i++)
+{
+    Thread.Sleep(500); // wait for half a second
+    Console.Write(".");
+}
+
 
 
