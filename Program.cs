@@ -26,6 +26,8 @@ static string NaturalPrint(string line)
                 break;
         }
     }
+    
+    Console.WriteLine("");
 
     return line;
 }
