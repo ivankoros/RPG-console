@@ -160,7 +160,7 @@ while (restart == null)
     restart = Console.ReadLine();
 }
 
-if (restart == 'y')
+if (restart.Contains('y'))
 {
     Console.Clear();
 
