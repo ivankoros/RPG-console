@@ -57,15 +57,11 @@ while (!validName)
 NaturalPrint($"Ah.. welcome {playerName}!",
     2000);
 
-NaturalPrint("Our adventure is starting");
+NaturalPrint("Our adventure is starting.....");
 
-for (int i = 0; i < 10; i++)
-{
-    Thread.Sleep(500); // wait for half a second
-    Console.Write(".");
-}
 
-NaturalPrint("You're sitting by a campfire; the flames dance fiercely against a light wind.");
+NaturalPrint("You're sitting by a campfire; the flames dance fiercely against a light wind.",
+    newLineDelay:0);
 
 Console.WriteLine(@"
 
@@ -82,7 +78,7 @@ jgs    /     /\
 Thread.Sleep(2000);
 
 var line = "You look around. Surrounded by a forest, neither the surrounding trees nor the log you're" +
-           "sitting on seem familiar.";
+           " sitting on seem familiar.";
 
 NaturalPrint(line, 2000);
 
@@ -91,7 +87,11 @@ NaturalPrint("Does it matter? The fire is warm, and you feel safe.",
     2000);
 Console.ResetColor();
 
-
+var doItMatter = null as string;
+while (doItMatter == null)
+{
+    doItMatter = Console.ReadLine();
+}
 NaturalPrint("'I guess not,' you say out loud.",
     2000);
 
@@ -106,7 +106,7 @@ NaturalPrint("You realize you haven't eaten all day; you're starving." +
 
 
 NaturalPrint("Hunger overcomes curiosity. You open your eyes and see a hiking sack on the ground to your right.",
-    2000);
+    0);
 Console.WriteLine(@"
 
        .--._ .
@@ -127,43 +127,45 @@ Console.WriteLine(@"
 Thread.Sleep(2200);
 
 NaturalPrint("What will you do?");
-var campfireFirstResponse = Console.ReadLine();
+var campfireFirstResponse = null as string;
 
-if (campfireFirstResponse != null)
+while (campfireFirstResponse == null)
 {
-    campfireFirstResponse = Regex.Replace(campfireFirstResponse, @"[^\w]", "");
-
-    if (campfireFirstResponse!.Contains("look"))
-    {
-        Console.WriteLine("You look through the hiking sack.");
-        Thread.Sleep(1000);
-        for (int i = 0; i < 3; i++)
-        {
-            Thread.Sleep(600);
-            Console.Write(".");
-        }
-
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("You should've gone to sleep.");
-        Console.ResetColor();
-
-        Console.WriteLine();
-    }
+    campfireFirstResponse = Console.ReadLine();
 }
 
+campfireFirstResponse = Regex.Replace(campfireFirstResponse, @"[^\w]", "");
 
-for (int i = 0; i < 10; i++)
+if (campfireFirstResponse!.Contains("look"))
 {
-    Thread.Sleep(500); // wait for half a second
-    Console.Write(".");
+    NaturalPrint("You decide to ruffle through the hiking sack.",
+        newLineDelay:0);
+        
+    NaturalPrint(".....");
+
+    Console.Clear();
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("You should've just gone to sleep.");
+    Console.ResetColor();
+
+    Console.WriteLine();
 }
 
-Console.Clear();
+NaturalPrint(@"""Restart"" ?");
 
+var restart = null as string;
 
-NaturalPrint("You're sitting by a campfire; your mind feels uneasy as the flame roars.");
-Console.WriteLine(@"
+while (restart == null)
+{
+    restart = Console.ReadLine();
+}
+
+if (restart == 'y')
+{
+    Console.Clear();
+
+    NaturalPrint("You're sitting by a campfire; your mind feels uneasy as the flame roars.");
+    Console.WriteLine(@"
 
 
         ______
@@ -176,4 +178,7 @@ jgs    /     /\
                   o  o  o
 ");
 
-Thread.Sleep(20000);
+    NaturalPrint("The fire feels familiar.");
+    Thread.Sleep(20000);
+}
+
