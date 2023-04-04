@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Reflection.Metadata;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-static string NaturalPrint(string line, int newLineDelay = 1000)
+static string NaturalPrint(string line, int newLineDelay = 1000, int endDelay = 500)
 {
     for (int i = 0; i < line.Length; i++)
     {
@@ -13,7 +14,7 @@ static string NaturalPrint(string line, int newLineDelay = 1000)
             case '!':
             case '?':
                 Console.Write(line[i]);
-                Thread.Sleep(500);
+                Thread.Sleep(endDelay);
                 break;
             case ',':
             case ';':
@@ -27,6 +28,7 @@ static string NaturalPrint(string line, int newLineDelay = 1000)
         }
     }
 
+    Console.WriteLine("");
     Console.WriteLine("");
 
     Thread.Sleep(newLineDelay);
@@ -84,29 +86,19 @@ var line = "You look around. Surrounded by a forest, neither the surrounding tre
 
 NaturalPrint(line, 2000);
 
-line = "Does it matter? The fire is warm, and you feel safe.";
 Console.ForegroundColor = ConsoleColor.Green;
-for (int i = 0; i < line.Length; i++)
-{
-    Console.Write(line[i]);
-}
-
+NaturalPrint("Does it matter? The fire is warm, and you feel safe.",
+    2000);
 Console.ResetColor();
-Console.WriteLine("");
 
-Thread.Sleep(2000);
-line = "'I guess not,' you say out loud. \n";
-for (int i = 0; i < line.Length; i++)
-{
-    Console.Write(line[i]);
-    Thread.Sleep(50);
-}
 
-Thread.Sleep(2000);
+NaturalPrint("'I guess not,' you say out loud.",
+    2000);
 
-Console.WriteLine("Relaxing, you close your eyes and let the warmth of the fire calm you. \n");
-Thread.Sleep(1500);
-Console.WriteLine("You're exhausted, although you don't seem to remember why. \n");
+NaturalPrint("Relaxing, you close your eyes and let the warmth of the fire calm you.",
+    1500);
+
+NaturalPrint("You're exhausted, although you don't seem to remember why.");
 
 NaturalPrint("You realize you haven't eaten all day; you're starving." +
              " When was the last time you ate?",
@@ -170,7 +162,7 @@ for (int i = 0; i < 10; i++)
 Console.Clear();
 
 
-NaturalPrint("You're sitting by a campfire; the flames dance fiercely against a light wind.");
+NaturalPrint("You're sitting by a campfire; your mind feels uneasy as the flame roars.");
 Console.WriteLine(@"
 
 
@@ -183,3 +175,5 @@ jgs    /     /\
   (@))_))        o ~/~~\~ o   
                   o  o  o
 ");
+
+Thread.Sleep(20000);
