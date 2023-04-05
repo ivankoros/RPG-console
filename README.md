@@ -17,7 +17,7 @@ The initial code for the game features a character creation system, where player
 ## Getting Started
 
 1. Clone the repository:
-``bash
+```bash
 git clone https://github.com/ivankoros/forgotten-forest
 ```
 2. Open the project in Visual Studio or another C# IDE (I use Jetbrains' Rider)
