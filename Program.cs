@@ -77,7 +77,7 @@ jgs    /     /\
 
 Thread.Sleep(2000);
 
-var line = "You look around. Surrounded by a forest, neither the surrounding trees nor the log you're" +
+var line = "You look around. Surrounded by a forest, neither the trees that encapsulate your campground nor the log you're" +
            " sitting on seem familiar.";
 
 NaturalPrint(line, 2000);
