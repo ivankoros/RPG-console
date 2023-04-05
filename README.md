@@ -1,5 +1,7 @@
 # Forgotten Forest RPG
 
+**Work in progress**
+
 A cutting-edge text adventure built using .NET with natural language processing and state-machine flow. Enigma of the Enchanted Forest invites players to explore a mysterious world filled with intrigue, puzzles, and unexpected twists.
 
 ## Features
@@ -10,11 +12,11 @@ A cutting-edge text adventure built using .NET with natural language processing 
 - Interactive storytelling with immersive text descriptions and ASCII art
 - Time-based text rendering to enhance realism
 
-## Initial Code
+## Current state
 
-The initial code for the game features a character creation system, where players can input their name and receive a warm welcome to the world of the game. The introduction presents an intriguing scenario and establishes the mysterious setting, hooking players in from the very start. Console output formatting has been utilized to provide visual feedback and improve the overall gameplay experience.
+The current state features a (not-so) warm welcome and immersive experience into the storytelling world of this project. The introduction presents an intriguing scenario and establishes the mysterious setting from the very start, without fixed, given choices for any scenario, and a natural-feeling, responsive text and visual rpompts that provide dynamic, real-time feedback for the player.
 
-## Getting Started
+## How do I play?
 
 1. Clone the repository:
 ```bash
