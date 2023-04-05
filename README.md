@@ -2,7 +2,7 @@
 
 **Work in progress**
 
-A cutting-edge text adventure built using .NET with natural language processing and state-machine flow. You're sitting near your campfire, surrounded by unfamiliar woods. You begin to question your place and memories, but an internal voice other than yours is set on keeping the facade of normalcy up. Enigma of the Enchanted Forest invites players to explore their role in a mysterious dynamic. and thought-provoking adventure through an engaging command-line story - filled with intrigue, puzzles, and unexpected twists.
+A text adventure built using .NET with natural language processing and state-machine flow. You're sitting near your campfire, surrounded by unfamiliar woods. You begin to question your place and memories, but an internal voice other than yours is set on keeping the facade of normalcy up. Enigma of the Enchanted Forest invites players to explore their role in a mysterious dynamic. and thought-provoking adventure through an engaging command-line story - filled with intrigue, puzzles, and unexpected twists.
 
 ## Features
 
