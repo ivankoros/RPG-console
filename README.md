@@ -16,6 +16,8 @@ A cutting-edge text adventure built using .NET with natural language processing 
 
 The current state features a (not-so) warm, yet immersive welcome to the world of this project. The introduction presents your scenario and establishes the mysterious setting from the very start, without fixed, given choices for any scenario, and a natural-feeling, responsive text and visual prompts that provide dynamic, real-time feedback for the player.
 
+![animation](forgotten-forest-animation.gif)
+
 ## How do I play?
 
 1. Clone the repository:
