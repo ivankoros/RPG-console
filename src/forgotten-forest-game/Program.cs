@@ -123,6 +123,14 @@ jgs    /     /\
 
                 Console.WriteLine();
             }
+            
+            if (campfireFirstResponse!.Contains("sleep"))
+            {
+                NaturalPrint("You decide to get some sleep, hoping that things will make more sense in the morning.");
+
+                NaturalPrint("You lie down near the fire and let the warmth and the sound of crackling wood lull you to sleep.");
+
+                NaturalPrint("You wake up to the sound of birds singing, and the sun is shining through the trees.");
 
             NaturalPrint(@"""Restart"" ?");
 
