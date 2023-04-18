@@ -123,30 +123,31 @@ jgs    /     /\
 
                 Console.WriteLine();
             }
-            
+
             if (campfireFirstResponse!.Contains("sleep"))
             {
                 NaturalPrint("You decide to get some sleep, hoping that things will make more sense in the morning.");
 
-                NaturalPrint("You lie down near the fire and let the warmth and the sound of crackling wood lull you to sleep.");
+                NaturalPrint(
+                    "You lie down near the fire and let the warmth and the sound of crackling wood lull you to sleep.");
 
                 NaturalPrint("You wake up to the sound of birds singing, and the sun is shining through the trees.");
 
-            NaturalPrint(@"""Restart"" ?");
+                NaturalPrint(@"""Restart"" ?");
 
-            var restart = null as string;
+                var restart = null as string;
 
-            while (restart == null)
-            {
-                restart = Console.ReadLine();
-            }
+                while (restart == null)
+                {
+                    restart = Console.ReadLine();
+                }
 
-            if (restart.Contains('y'))
-            {
-                Console.Clear();
+                if (restart.Contains('y'))
+                {
+                    Console.Clear();
 
-                NaturalPrint("You're sitting by a campfire; your mind feels uneasy as the flame roars.");
-                Console.WriteLine(@"
+                    NaturalPrint("You're sitting by a campfire; your mind feels uneasy as the flame roars.");
+                    Console.WriteLine(@"
 
 
         ______
@@ -159,41 +160,42 @@ jgs    /     /\
                   o  o  o
 ");
 
-                NaturalPrint("The fire feels familiar.");
-                Thread.Sleep(20000);
-            }
-        }
-
-        private static string NaturalPrint(string line, int newLineDelay = 1000, int endDelay = 500)
-        {
-            foreach (var word in line)
-            {
-                switch (word)
-                {
-                    case '.':
-                    case '!':
-                    case '?':
-                        Console.Write(word);
-                        Thread.Sleep(endDelay);
-                        break;
-                    case ',':
-                    case ';':
-                        Console.Write(word);
-                        Thread.Sleep(250);
-                        break;
-                    default:
-                        Console.Write(word);
-                        Thread.Sleep(50);
-                        break;
+                    NaturalPrint("The fire feels familiar.");
+                    Thread.Sleep(20000);
                 }
             }
 
-            Console.WriteLine("");
-            Console.WriteLine("");
+            static string NaturalPrint(string line, int newLineDelay = 1000, int endDelay = 500)
+            {
+                foreach (var word in line)
+                {
+                    switch (word)
+                    {
+                        case '.':
+                        case '!':
+                        case '?':
+                            Console.Write(word);
+                            Thread.Sleep(endDelay);
+                            break;
+                        case ',':
+                        case ';':
+                            Console.Write(word);
+                            Thread.Sleep(250);
+                            break;
+                        default:
+                            Console.Write(word);
+                            Thread.Sleep(50);
+                            break;
+                    }
+                }
 
-            Thread.Sleep(newLineDelay);
+                Console.WriteLine("");
+                Console.WriteLine("");
 
-            return line;
+                Thread.Sleep(newLineDelay);
+
+                return line;
+            }
         }
     }
 }
